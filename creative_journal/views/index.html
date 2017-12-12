@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="myApp"> 
+    
+<head>
+    <title>User Login and Sessions</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+        
+<body ng-controller="myController">  
+    <div>
+        <h2 id="welcomeText">Welcome. You are Logged In as
+            <%= username %>
+        </h2>
+        <a id="logoutLink" href="/logout">logout</a>
+        <a id="editLink" href="/user">Edit User</a>
+           
+    </div>
+    <br>
+    <img src="https://image.spreadshirtmedia.net/image-server/v1/mp/compositions/T812A2PA1667PT17X111Y89D129326847S9/views/1,width=300,height=300,appearanceId=2,backgroundColor=E8E8E8/lit-logo-chest-mens-premium-t-shirt.jpg">
+    <hr>
+    <span id="indexMsg">
+        <%= msg %>
+    </span>
+    <hr>
+    <span id="colorText">
+    Color
+        <%= color %>
+      </span>
+<h2> Add a Journal Entry </h2>
+
+<form ng-submit="addJournal()"  style = "margin-top30px;">
+   Title <input type="text" ng-model="title"></input>
+    <br>
+    <textarea rows="10" cols = "50" ng-model="content"></textarea>
+    <br>
+    <button type="submit">Save Entry</button>
+  </form>
+
+<div ng-repeat="entry in entries | orderBy: 'title'">
+   <span class="glyphicon glyphicon-remove" ng-click="delete(entry)"></span>
+     {{entry.username}}
+     {{entry.title}}
+     <br>
+     {{entry.content}}
+
+    <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+    <script src="/javascripts/my_app.js"></script>
+</body>
+      
+</html>

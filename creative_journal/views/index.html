@@ -17,7 +17,7 @@
            
     </div>
     <br>
-    <img src="https://image.spreadshirtmedia.net/image-server/v1/mp/compositions/T812A2PA1667PT17X111Y89D129326847S9/views/1,width=300,height=300,appearanceId=2,backgroundColor=E8E8E8/lit-logo-chest-mens-premium-t-shirt.jpg">
+    <img src="http://vignette1.wikia.nocookie.net/warehouse13/images/e/e2/Edgar_Allan_Poe%27s_Quill_Pen.PNG/revision/latest?cb=20130828041003">
     <hr>
     <span id="indexMsg">
         <%= msg %>
@@ -37,12 +37,12 @@
     <button type="submit">Save Entry</button>
   </form>
 
-<div ng-repeat="entry in user_entries ">
+<div id="entries"  ng-repeat="entry in user_entries ">
   <!-- <span class="glyphicon glyphicon-remove" ng-click="delete(entry)"></span>-->
      {{entry.title}}
      <br>
      {{entry.content}}
-
+</div>
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="/javascripts/my_app.js"></script>
 </body>

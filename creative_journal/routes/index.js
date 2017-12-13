@@ -63,11 +63,21 @@ router.post('/entries', function(req, res, next) {
 });
 router.get('/entries', function(req, res, next) {
    console.log("looking through your journal")
-  Entry.find(function(err, comments){
+     Entry.find(function(err, entries){
     if(err){ return next(err); }
-    res.json(comments);
+    res.json(entries);
   });
 });
+router.delete('/entries/:entry', function(req, res)  {
+   console.log("in Delete");
+     Entry.remove(function(err) {
+	if (err) return console.error (err);
+	else {
+   res.sendStatus(200);
+      }
+   });
+});
+
 router.post('/signup', users.signup);
 router.post('/user/update', users.updateUser);
 router.post('/user/delete', users.deleteUser);

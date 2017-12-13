@@ -2,11 +2,12 @@
 <html ng-app="myApp"> 
     
 <head>
-    <title>User Login and Sessions</title>
+  <title>User Login and Sessions</title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 </head>
         
-<body ng-controller="myController">  
+<body ng-controller="myController" ng-init="getAll()">  
     <div>
         <h2 id="welcomeText">Welcome. You are Logged In as
             <%= username %>
@@ -23,22 +24,21 @@
     </span>
     <hr>
     <span id="colorText">
-    Color
+     Color
         <%= color %>
       </span>
 <h2> Add a Journal Entry </h2>
 
 <form ng-submit="addJournal()"  style = "margin-top30px;">
-   Title <input type="text" ng-model="title"></input>
+   Title: <input type="text" ng-model="title"></input>
     <br>
     <textarea rows="10" cols = "50" ng-model="content"></textarea>
     <br>
     <button type="submit">Save Entry</button>
   </form>
 
-<div ng-repeat="entry in entries | orderBy: 'title'">
-   <span class="glyphicon glyphicon-remove" ng-click="delete(entry)"></span>
-     {{entry.username}}
+<div ng-repeat="entry in user_entries ">
+  <!-- <span class="glyphicon glyphicon-remove" ng-click="delete(entry)"></span>-->
      {{entry.title}}
      <br>
      {{entry.content}}

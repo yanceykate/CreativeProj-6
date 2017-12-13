@@ -1,15 +1,56 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-background-color:gray;
+  font: 14px "Myriad Pro", "Century Gothic", Arial, sans-serif;
+background-color: gainsboro;
 }
 
 a {
-  color: #00B7FF;
-  border:gold solid 4px;
+  color: white;
+  border:goldenrod solid 2px;
   border-radius:4px;
+  text-decoration:none;
+  background-color:black;
+  padding:5px;
+}
+a:hover{
+  color:black;
+  background-color:goldenrod;
 }
 h2{
 text-align:center;
 }
-
+div{
+text-align:center;
+}
+img{
+  transform:rotate(40deg);
+  position:relative;
+  top:10px;
+  left:45%;
+}
+span{
+  background-color:gray;
+  padding:4px;
+  padding-left:100px;
+  padding-right:100px;
+  color:white;
+}
+button{
+ background-color:black;
+ padding:4px; 
+ border: goldenrod solid 2px;
+ border-radius:4px;
+ color:white;
+}
+#entry{
+background-color:gainsboro;
+}
+#entries{
+ text-align:justified;
+ font:"Century Gothic";
+ background-color:cornsilk;
+ border:gray solid 4px;
+ outline:goldenrod solid 4px;
+ padding:5px;
+ margin:15px;
+}
